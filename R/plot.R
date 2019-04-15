@@ -1,5 +1,5 @@
 #' @title Plot \code{lmm2met} object
-#' @name plot.lmm2met
+#' @name plot
 #' @description plot \code{lmm2met} object.
 #' @usage plot.lmm2met(x, type, fix, ...)
 #' @param x \code{lmm2met} object from \code{fitLmm}
@@ -26,7 +26,8 @@
 #' @author Kwanjeera W \email{kwanjeera.wan@@mahidol.ac.th}
 #' @references https://cran.r-project.org/web/packages/lme4/index.html
 #' @examples
-#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14)
+#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#' #random='(1|Id)', data=adipose, start=10, end=14)
 #' #plot(fitMet, type='residual')
 #' @import ggplot2
 #' @import dplyr
@@ -36,6 +37,9 @@
 #' @importFrom gplots heatmap.2
 #' @importFrom knitr kable
 #' @importFrom kableExtra kable_styling cell_spec
+#' @importFrom grDevices colorRampPalette dev.off pdf
+#' @importFrom stats fitted qnorm quantile residuals
+#' @importFrom utils write.csv
 #' @export
 plot.lmm2met <- function(x, type, fix=NULL, ...) {
   tmparg <- try(type <- match.arg(tolower(type), c("residual","randeff","fixeff","fitted","chisq","coeff"), several.ok = FALSE), silent = TRUE)

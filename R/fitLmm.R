@@ -38,11 +38,14 @@
 #' @seealso \code{\link{lmer}}, \code{\link{drop1}}, \code{\link{update}}, \code{\link{summary}}
 #' @examples
 #' ##Ex 1. LMMs containing all given fixed and random effects
-#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14)
+#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#' #random='(1|Id)', data=adipose, start=10, end=14)
 #' ##Ex 2. LMMs containing only significant fixed effects and random effects
-#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14, auto=TRUE)
+#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#' #random='(1|Id)', data=adipose, start=10, end=14, auto=TRUE)
 #' ##Ex 3. LMMs containing only significant fixed effects, Tissue effect and random effects
-#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14, major='Tissue')
+#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#' #random='(1|Id)', data=adipose, start=10, end=14, major='Tissue')
 #' #structure(fitMet) #show lmm2met object
 #' #summary(fitMet$updateMod[[1]]) #summarize outputs of fitting a LMM to variable X1
 #' @importFrom stats as.formula drop1 predict update

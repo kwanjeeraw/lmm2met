@@ -26,7 +26,7 @@ fitLmm(fix, random, data, start, end=NULL, auto=FALSE, major=NULL, pval=0.05, ..
 \item{...}{other arguments of \code{lmer} function}
 }
 \value{
-\code{fitLmm} returns a LMM for each measured variable. Model information is returned as an object of class \code{limmo},
+\code{fitLmm} returns a LMM for each measured variable. Model information is returned as an object of class \code{lmm2met},
 with the following components:
 \code{completeMod} = list of LMMs containing all given fixed and random effects
 
@@ -53,12 +53,15 @@ Random effect must be provided to form LMMs. The random-effect term can be in se
 }
 \examples{
 ##Ex 1. LMMs containing all given fixed and random effects
-#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14)
+#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#random='(1|Id)', data=adipose, start=10, end=14)
 ##Ex 2. LMMs containing only significant fixed effects and random effects
-#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14, auto=TRUE)
+#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#random='(1|Id)', data=adipose, start=10, end=14, auto=TRUE)
 ##Ex 3. LMMs containing only significant fixed effects, Tissue effect and random effects
-#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14, major='Tissue')
-#structure(fitMet) #show limmo object
+#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#random='(1|Id)', data=adipose, start=10, end=14, major='Tissue')
+#structure(fitMet) #show lmm2met object
 #summary(fitMet$updateMod[[1]]) #summarize outputs of fitting a LMM to variable X1
 }
 \references{

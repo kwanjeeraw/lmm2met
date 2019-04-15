@@ -13,7 +13,8 @@
 #' @references https://cran.r-project.org/web/packages/lme4/index.html
 #' @seealso \code{\link{lmer}}, \code{\link{drop1}}, \code{\link{summary}}
 #' @examples
-#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14)
+#' #fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#' #random='(1|Id)', data=adipose, start=10, end=14)
 #' #getFixCoeff(fitMet)
 #' @export
 getFixCoeff <- function(x, save=TRUE) {

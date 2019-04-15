@@ -7,7 +7,7 @@
 getFixCoeff(x, save=TRUE)
 }
 \arguments{
-\item{x}{\code{limmo} object from \code{fitLmm}}
+\item{x}{\code{lmm2met} object from \code{fitLmm}}
 
 \item{save}{logical; export to csv file, \code{defaut = TRUE}}
 }
@@ -23,7 +23,8 @@ These include overall means of measured variables (Intercept), coefficients of f
 significance levels (Pr(Chi)) from chi-square tests.
 }
 \examples{
-#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), random='(1|Id)', data=adipose, start=10, end=14)
+#fitMet = fitLmm(fix=c('Sex','Age','BMI','Stage','Location','Tissue'), 
+#random='(1|Id)', data=adipose, start=10, end=14)
 #getFixCoeff(fitMet)
 }
 \references{
